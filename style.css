@@ -1,0 +1,63 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Style the header */
+.header {
+    background-color: #f4bb84;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+.footer {
+    background-color: #f4bb84;
+    padding: 10px 40px;
+    color: white;
+    text-align: center;
+}
+
+/* Clear floats after the header */
+.footer:after, .image-area:after, .header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.image-area {
+    background-color: #f4ecf0;
+    padding: 10px 40px;
+    color: black;
+}
+
+.evaluateBtn {
+    padding: 10px;
+    width: 50%;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+.evaluateBtn:hover {
+    background-color: #bbb;
+}
+
+.inputbox {
+    position: absolute;
+    width: 35px;
+    height: 40px;
+}
+
+.result {
+    position: absolute;
+    width: 75px;
+    height: 35px;
+    font-size: 24px;
+}

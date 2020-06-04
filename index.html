@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Online Pair Generator</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="myDIV" class="header">
+  <h2>Worksheet Evaluator</h2>
+    <div style="width: 100%">
+        <span onclick="evaluateResult()" class="evaluateBtn">Evaluate</span>
+        <span onclick="clearResult()" class="evaluateBtn">Clear</span>
+    </div>
+</div>
+
+<div id="image-area" class="image-area">
+   <div id="container" style="position: relative">
+      <img src="worksheet.png" width="1008px" height="864px">
+       <span id ="result" type="number" class="result" style="top: 90px; left: 886px;"></span>
+       <input id ="q1" type="number" class="inputbox" style="top: 174px; left: 586px;">
+      <input id ="q2" type="number" class="inputbox" style="top: 251px; left: 129px;"><input id ="q3" type="text" class="inputbox" style="top: 251px; left: 586px;">
+      <input id ="q4" type="number" class="inputbox" style="top: 328px; left: 129px;"><input id ="q5" type="text" class="inputbox" style="top: 328px; left: 586px;">
+      <input id ="q6" type="number" class="inputbox" style="top: 405px; left: 129px;"><input id ="q7" type="text" class="inputbox" style="top: 405px; left: 586px;">
+      <input id ="q8" type="number" class="inputbox" style="top: 482px; left: 129px;"><input id ="q9" type="text" class="inputbox" style="top: 482px; left: 586px;">
+      <input id ="q10" type="number" class="inputbox" style="top: 559px; left: 129px;"><input id ="q11" type="text" class="inputbox" style="top: 559px; left: 586px;">
+       <input id ="q12" type="number" class="inputbox" style="top: 636px; left: 129px;"><input id ="q13" type="text" class="inputbox" style="top: 636px; left: 586px;">
+       <input id ="q14" type="number" class="inputbox" style="top: 713px; left: 129px;"><input id ="q15" type="text" class="inputbox" style="top: 713px; left: 586px;">
+       <input id ="q16" type="number" class="inputbox" style="top: 790px; left: 129px;"><input id ="q17" type="text" class="inputbox" style="top: 790px; left: 586px;">
+   </div>
+</div>
+
+
+<script language="JavaScript">
+    var totalQuestions = 17;
+    var correctAnswers = [5, 2, 5, 3, 7, 6, 1, 4, 3, 1, 5, 1, 5, 1, 3, 2, 6]
+
+    function clearResult() {
+      for (let i = 1; i <= totalQuestions; i++) {
+        var input = document.getElementById("q"+i);
+        input.value = "";
+        input.style.background = "none";
+      }
+      document.getElementById("result").innerText = "";
+    }
+
+     function evaluateResult() {
+       var correctCount = 0;
+       for (let i = 1; i <= totalQuestions; i++) {
+         var input = document.getElementById("q"+i);
+         if(parseInt(input.value, 10) === correctAnswers[i-1]){
+           correctCount++;
+           input.style.background = "green";
+         } else {
+           input.style.background = "red";
+         }
+       }
+       document.getElementById("result").innerText = correctCount + "/" + totalQuestions;
+     }
+
+</script>
+
+
+<div class="footer">
+  Source code : <a href="https://github.com/thinkuldeep/image-evaluator">https://github.com/thinkuldeep/image-evaluator</a>
+</div>
+</body>
+</html>
